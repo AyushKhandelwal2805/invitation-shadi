@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wedding Invitation · 19 &amp; 20 November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mukta:wght@300;400;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rani:#8E1C48;          /* deep rani pink — header field */
+    --rani-dark:#5E0E2E;
+    --marigold:#E39A16;      /* genda phool */
+    --sindoor:#C6431A;
+    --leaf:#2F6B4F;
+    --paper:#FFF6E9;
+    --paper-edge:#F2E2C9;
+    --ink:#3A1220;
+    --ink-soft:#7C5A55;
+  }
+
+  *{box-sizing:border-box}
+
+  body{
+    margin:0;
+    padding:24px 14px 48px;
+    background:#EADCC6;
+    background-image:
+      radial-gradient(circle at 20% 0%, rgba(142,28,72,.10), transparent 55%),
+      radial-gradient(circle at 85% 100%, rgba(227,154,22,.14), transparent 55%);
+    font-family:'Mukta', 'Segoe UI', system-ui, sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .card{
+    max-width:720px;
+    margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--paper-edge);
+    box-shadow:0 18px 44px rgba(94,14,46,.26);
+    overflow:hidden;
+  }
+
+  /* ---------- header ---------- */
+  .head{
+    position:relative;
+    background:
+      linear-gradient(180deg, var(--rani) 0%, var(--rani-dark) 100%);
+    color:#FFF1DC;
+    padding:0 26px 34px;
+    text-align:center;
+  }
+  .head::after{
+    content:"";
+    position:absolute;inset:10px;
+    border:1px solid rgba(227,154,22,.45);
+    pointer-events:none;
+  }
+  .garland{display:block;width:100%;height:74px}
+
+  .shlok{
+    font-family:'Tiro Devanagari Hindi', Georgia, serif;
+    font-size:17px;
+    color:var(--marigold);
+    margin:6px 0 22px;
+  }
+  .invite{
+    font-size:13.5px;
+    font-weight:300;
+    letter-spacing:.4px;
+    color:rgba(255,241,220,.82);
+    max-width:34ch;
+    margin:0 auto 18px;
+    line-height:1.6;
+  }
+  .names{
+    font-family:'Marcellus', Georgia, serif;
+    font-size:clamp(30px, 8vw, 46px);
+    line-height:1.1;
+    letter-spacing:.5px;
+    margin:0;
+  }
+  .names .placeholder{
+    border-bottom:1px dashed rgba(227,154,22,.6);
+    padding:0 4px;
+  }
+  .weds{
+    display:block;
+    font-family:'Mukta', sans-serif;
+    font-size:14px;
+    font-weight:300;
+    font-style:italic;
+    letter-spacing:2px;
+    color:var(--marigold);
+    margin:8px 0;
+  }
+  .when{
+    margin-top:22px;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:1px;
+  }
+  .where{
+    font-size:12.5px;
+    font-weight:300;
+    color:rgba(255,241,220,.72);
+    margin-top:4px;
+  }
+
+  /* ---------- day sections ---------- */
+  .day{padding:30px 26px 8px}
+  .day + .day{padding-top:14px}
+
+  .day-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    padding-bottom:10px;
+    border-bottom:2px solid var(--marigold);
+  }
+  .day-head h2{
+    font-family:'Marcellus', Georgia, serif;
+    font-size:21px;
+    color:var(--rani);
+    margin:0;
+    white-space:nowrap;
+  }
+  .day-head .venue{
+    font-size:12px;
+    font-weight:300;
+    color:var(--ink-soft);
+    text-align:right;
+    flex:1;
+    line-height:1.4;
+  }
+
+  .events{
+    list-style:none;
+    margin:0;
+    padding:0 0 0 0;
+  }
+  .event{
+    display:grid;
+    grid-template-columns:104px 30px 1fr;
+    gap:0 12px;
+    padding:15px 0 15px;
+    border-bottom:1px dotted rgba(142,28,72,.22);
+  }
+  .event:last-child{border-bottom:0}
+
+  .time{
+    font-size:13px;
+    font-weight:600;
+    color:var(--sindoor);
+    line-height:1.45;
+    padding-top:3px;
+  }
+  .time small{display:block;font-weight:300;color:var(--ink-soft);font-size:11.5px}
+
+  .marker{
+    display:flex;
+    justify-content:center;
+    position:relative;
+  }
+  .marker span{
+    width:26px;height:26px;
+    border-radius:50%;
+    background:var(--marigold);
+    color:#fff;
+    font-size:12.5px;
+    font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    z-index:1;
+  }
+  .marker.plain span{
+    background:transparent;
+    border:1px solid var(--leaf);
+    color:var(--leaf);
+    font-size:14px;
+  }
+  .marker::before{
+    content:"";
+    position:absolute;
+    top:0;bottom:-31px;left:50%;
+    width:1px;
+    background:rgba(142,28,72,.2);
+    transform:translateX(-.5px);
+  }
+  .event:last-child .marker::before{display:none}
+
+  .what h3{
+    font-family:'Marcellus', Georgia, serif;
+    font-size:18px;
+    line-height:1.3;
+    margin:0 0 3px;
+    color:var(--ink);
+  }
+  .what p{
+    margin:0;
+    font-size:13px;
+    font-weight:300;
+    line-height:1.55;
+    color:var(--ink-soft);
+  }
+  .what p strong{color:var(--rani);font-weight:600}
+  .what .detail{margin-top:5px}
+
+  /* ---------- footer ---------- */
+  .foot{
+    margin-top:20px;
+    padding:26px;
+    background:linear-gradient(180deg, rgba(227,154,22,.10), rgba(227,154,22,.20));
+    border-top:1px solid rgba(227,154,22,.5);
+    text-align:center;
+  }
+  .foot .line{
+    font-family:'Marcellus', Georgia, serif;
+    font-size:17px;
+    color:var(--rani);
+    margin:0 0 6px;
+  }
+  .foot .from{
+    font-size:12.5px;
+    font-weight:300;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  .foot .from .placeholder{border-bottom:1px dashed rgba(142,28,72,.4);padding:0 4px}
+
+  @media (max-width:560px){
+    .event{grid-template-columns:24px 1fr;gap:0 10px}
+    .time{grid-column:1 / -1;padding:0 0 6px 34px;order:2}
+    .marker{order:1;grid-column:1}
+    .marker span{width:22px;height:22px;font-size:11px}
+    .marker::before{bottom:-32px}
+    .what{order:1;grid-column:2}
+    .time{order:3;grid-column:2;padding-left:0}
+    .day-head{flex-direction:column;gap:4px}
+    .day-head .venue{text-align:left}
+  }
+
+  @media print{
+    body{background:#fff;padding:0}
+    .card{box-shadow:none;border:none;max-width:100%}
+    .day{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<article class="card">
+
+  <header class="head">
+    <svg class="garland" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 10 Q600 90 1200 10" fill="none" stroke="#2F6B4F" stroke-width="2"/>
+      <g id="blooms"></g>
+    </svg>
+
+    <p class="shlok">॥ श्री गणेशाय नमः ॥</p>
+
+    <p class="invite">Together with our families, we ask for your blessings as we begin our life together</p>
+
+    <h1 class="names">
+      <span class="placeholder">Bride</span>
+      <span class="weds">weds</span>
+      <span class="placeholder">Groom</span>
+    </h1>
+
+    <p class="when">Thursday 19 &amp; Friday 20 November 2026</p>
+    <p class="where">Hotel Ashoka Inn &nbsp;·&nbsp; Mehta Farms, Nahar</p>
+  </header>
+
+  <!-- ============ DAY ONE ============ -->
+  <section class="day">
+    <div class="day-head">
+      <h2>Thursday, 19 November</h2>
+      <div class="venue">Hotel Ashoka Inn<br>Banquet Hall &amp; Pool Area</div>
+    </div>
+
+    <ul class="events">
+      <li class="event">
+        <div class="time">10:00 – 10:30 am</div>
+        <div class="marker"><span>1</span></div>
+        <div class="what">
+          <h3>Ring Ceremony</h3>
+          <p>Banquet Hall, Hotel Ashoka Inn</p>
+        </div>
+      </li>
+
+      <li class="event">
+        <div class="time">11:00 am – 12:00 pm</div>
+        <div class="marker"><span>2</span></div>
+        <div class="what">
+          <h3>Sagai (Solo)</h3>
+          <p>Banquet Hall, Hotel Ashoka Inn</p>
+        </div>
+      </li>
+
+      <li class="event">
+        <div class="time">1:00 – 3:00 pm</div>
+        <div class="marker"><span>3</span></div>
+        <div class="what">
+          <h3>Haldi</h3>
+          <p>Banquet Hall &amp; Pool Area, Hotel Ashoka Inn</p>
+        </div>
+      </li>
+
+      <li class="event">
+        <div class="time">7:00 – 11:00 pm</div>
+        <div class="marker"><span>4</span></div>
+        <div class="what">
+          <h3>Sangeet Night &amp; DJ Party</h3>
+          <p>Banquet Hall, Hotel Ashoka Inn</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ DAY TWO ============ -->
+  <section class="day">
+    <div class="day-head">
+      <h2>Friday, 20 November</h2>
+      <div class="venue">Alpha Home · Mehta Farms Nahar<br>Mehta Farms · Shiv Colony Home</div>
+    </div>
+
+    <ul class="events">
+      <li class="event">
+        <div class="time">11:00 am <small>onwards</small></div>
+        <div class="marker plain"><span>&#10022;</span></div>
+        <div class="what">
+          <h3>Baraat Assembly</h3>
+          <p>Procession by car from <strong>Alpha Home</strong> to <strong>Mehta Farms, Nahar</strong> — the starting point of the Baraat.</p>
+        </div>
+      </li>
+
+      <li class="event">
+        <div class="time">12:05 pm <small>onwards</small></div>
+        <div class="marker"><span>5</span></div>
+        <div class="what">
+          <h3>Ghudchadi &amp; Baraat Procession</h3>
+          <p>The Baraat sets off from Mehta Farms, Nahar towards Mehta Farms.</p>
+        </div>
+      </li>
+
+      <li class="event">
+        <div class="time">1:00 pm</div>
+        <div class="marker"><span>6</span></div>
+        <div class="what">
+          <h3>Baraat Arrives at Mehta Farms</h3>
+          <p>Ribbon cutting by the Groom, followed by Neem Jhada and Aarta.</p>
+          <p class="detail">Baraati welcome in the Mehta Farms Marriage Garden.</p>
+        </div>
+      </li>
+
+      <li class="event">
+        <div class="time">2:00 pm <small>onwards</small></div>
+        <div class="marker"><span>7</span></div>
+        <div class="what">
+          <h3>Varmala Ceremony</h3>
+          <p>Mehta Farms</p>
+        </div>
+      </li>
+
+      <li class="event">
+        <div class="time">4:00 – 7:00 pm</div>
+        <div class="marker"><span>8</span></div>
+        <div class="what">
+          <h3>Shubh Phera Ceremony</h3>
+          <p>Mandap, Mehta Farms</p>
+        </div>
+      </li>
+
+      <li class="event">
+        <div class="time">7:45 pm <small>onwards</small></div>
+        <div class="marker"><span>9</span></div>
+        <div class="what">
+          <h3>Hand Thape</h3>
+          <p>The couple proceeds towards <strong>Shiv Colony Home</strong>.</p>
+        </div>
+      </li>
+
+      <li class="event">
+        <div class="time">9:00 pm <small>onwards</small></div>
+        <div class="marker"><span>10</span></div>
+        <div class="what">
+          <h3>Bride's Home Welcome</h3>
+          <p>Alpha Home</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="foot">
+    <p class="line">Do come and bless the couple</p>
+    <p class="from">With love, the <span class="placeholder">Family</span> &amp; <span class="placeholder">Family</span></p>
+  </footer>
+
+</article>
+
+<script>
+  // Marigold garland: flowers placed along the header's draping curve.
+  // Curve is quadratic (0,10) → (600,90) → (1200,10), so x = 1200t, y = 10 + 160t(1-t).
+  (function () {
+    var group = document.getElementById('blooms');
+    if (!group) return;
+
+    var petalColors = ['#E39A16', '#C6431A', '#F0B840'];
+    var svgns = 'http://www.w3.org/2000/svg';
+    var frag = document.createDocumentFragment();
+
+    for (var i = 0; i < 14; i++) {
+      var t = 0.035 + i * 0.0715;
+      if (t > 1) break;
+
+      var x = 1200 * t;
+      var y = 10 + 160 * t * (1 - t);
+      var color = petalColors[i % petalColors.length];
+      var r = i % 3 === 1 ? 8.5 : 10.5;
+
+      var g = document.createElementNS(svgns, 'g');
+      g.setAttribute('transform', 'translate(' + x.toFixed(1) + ',' + y.toFixed(1) + ')');
+
+      // petals
+      for (var p = 0; p < 8; p++) {
+        var a = (p / 8) * Math.PI * 2;
+        var petal = document.createElementNS(svgns, 'circle');
+        petal.setAttribute('cx', (Math.cos(a) * r * 0.52).toFixed(2));
+        petal.setAttribute('cy', (Math.sin(a) * r * 0.52).toFixed(2));
+        petal.setAttribute('r', (r * 0.5).toFixed(2));
+        petal.setAttribute('fill', color);
+        g.appendChild(petal);
+      }
+
+      // centre
+      var core = document.createElementNS(svgns, 'circle');
+      core.setAttribute('r', (r * 0.42).toFixed(2));
+      core.setAttribute('fill', i % 3 === 1 ? '#8E1C48' : '#B0500F');
+      g.appendChild(core);
+
+      // a leaf every third bloom
+      if (i % 3 === 0) {
+        var leaf = document.createElementNS(svgns, 'path');
+        leaf.setAttribute('d', 'M0 6 q9 6 2 17 q-9 -6 -2 -17 z');
+        leaf.setAttribute('fill', '#2F6B4F');
+        g.appendChild(leaf);
+      }
+
+      frag.appendChild(g);
+    }
+
+    group.appendChild(frag);
+  })();
+</script>
+
+</body>
+</html>
